@@ -29,6 +29,6 @@ exports.postcomment = functions.https.onRequest((request, response) => {
     const currentTime = admin.firestore.Timestamp.now();
     request.body.timestamp = currentTime;
     admin.firestore().collection('comments').add(request.body).then(()=>{
-    response.send("Saved in the database");
+    response.send("Saved in the database! And we commited a change!");
     });
     });
