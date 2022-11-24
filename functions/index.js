@@ -12,7 +12,7 @@ exports.getcomments = functions.https.onRequest((request, response) => {
 let myData = []
 admin.firestore().collection('comments').orderBy('timestamp').get().then((snapshot) => {
 if (snapshot.empty) {
-console.log('No matching documents.');
+console.log('No matching documents. Heres another change!');
 response.send('No data in database');
 return;
 }
